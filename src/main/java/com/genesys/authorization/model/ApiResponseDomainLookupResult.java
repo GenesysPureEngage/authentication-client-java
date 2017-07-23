@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ApiResponseDomainLookupResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-21T21:01:46.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-23T19:22:57.518Z")
 public class ApiResponseDomainLookupResult {
   @SerializedName("data")
   private DomainLookupResult data = null;
