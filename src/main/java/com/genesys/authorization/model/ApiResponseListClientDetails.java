@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * ApiResponseListClientDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-24T12:54:51.453Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-24T13:34:40.446Z")
 public class ApiResponseListClientDetails {
   @SerializedName("data")
   private List<ClientDetails> data = new ArrayList<ClientDetails>();
