@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * Collectionstring
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-24T14:34:31.957Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-24T20:02:46.517Z")
 public class Collectionstring {
 
   @Override
