@@ -42,14 +42,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AuthServerApi {
+public class AuthenticationApi {
     private ApiClient apiClient;
 
-    public AuthServerApi() {
+    public AuthenticationApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public AuthServerApi(ApiClient apiClient) {
+    public AuthenticationApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
