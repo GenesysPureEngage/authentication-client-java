@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GrantedAuthority
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T17:23:00.879Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T22:28:38.081Z")
 public class GrantedAuthority {
   @SerializedName("authority")
   private String authority = null;

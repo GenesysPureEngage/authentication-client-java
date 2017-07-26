@@ -923,15 +923,25 @@ public class AuthenticationApi {
         return call;
     }
     /* Build call for retrieveToken */
-    private com.squareup.okhttp.Call retrieveTokenCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call retrieveTokenCall(String grantType, String clientId, String username, String password, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
         String localVarPath = "/oauth/token".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (grantType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "grant_type", grantType));
+        if (clientId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "client_id", clientId));
+        if (username != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "username", username));
+        if (password != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -964,10 +974,30 @@ public class AuthenticationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call retrieveTokenValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call retrieveTokenValidateBeforeCall(String grantType, String clientId, String username, String password, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'grantType' is set
+        if (grantType == null) {
+            throw new ApiException("Missing the required parameter 'grantType' when calling retrieveToken(Async)");
+        }
+        
+        // verify the required parameter 'clientId' is set
+        if (clientId == null) {
+            throw new ApiException("Missing the required parameter 'clientId' when calling retrieveToken(Async)");
+        }
+        
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling retrieveToken(Async)");
+        }
+        
+        // verify the required parameter 'password' is set
+        if (password == null) {
+            throw new ApiException("Missing the required parameter 'password' when calling retrieveToken(Async)");
+        }
         
         
-        com.squareup.okhttp.Call call = retrieveTokenCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = retrieveTokenCall(grantType, clientId, username, password, authorization, progressListener, progressRequestListener);
         return call;
 
         
@@ -979,22 +1009,32 @@ public class AuthenticationApi {
     /**
      * Endpoint to retrieve token
      * Can be called directly for Client Credential and Resource Owner Code flow.  Resource Owner example:   &#x60;curl client_name:client_secret@localhost:8095/oauth/token -d grant_type&#x3D;password -d client_id&#x3D;external_api_client-d scope&#x3D;openid -d username&#x3D;domain\\\\user -d password&#x3D;password&#x60;   Client credentials example:   &#x60;curl client_name:client_secret@localhost:8095/oauth/token -d grant_type&#x3D;client_credentials -d scope&#x3D;openid&#x60;
+     * @param grantType Grant type (required)
+     * @param clientId Client ID (id of application/service registered as client in IDP) (required)
+     * @param username ConfigServer person username (required)
+     * @param password ConfigServer person password (required)
+     * @param authorization Basic authorization. Should contains client_id and secret Example: &#39;Authorization: Basic Y3...MQ&#x3D;&#x3D;&#39; (optional)
      * @return DefaultOAuth2AccessToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DefaultOAuth2AccessToken retrieveToken() throws ApiException {
-        ApiResponse<DefaultOAuth2AccessToken> resp = retrieveTokenWithHttpInfo();
+    public DefaultOAuth2AccessToken retrieveToken(String grantType, String clientId, String username, String password, String authorization) throws ApiException {
+        ApiResponse<DefaultOAuth2AccessToken> resp = retrieveTokenWithHttpInfo(grantType, clientId, username, password, authorization);
         return resp.getData();
     }
 
     /**
      * Endpoint to retrieve token
      * Can be called directly for Client Credential and Resource Owner Code flow.  Resource Owner example:   &#x60;curl client_name:client_secret@localhost:8095/oauth/token -d grant_type&#x3D;password -d client_id&#x3D;external_api_client-d scope&#x3D;openid -d username&#x3D;domain\\\\user -d password&#x3D;password&#x60;   Client credentials example:   &#x60;curl client_name:client_secret@localhost:8095/oauth/token -d grant_type&#x3D;client_credentials -d scope&#x3D;openid&#x60;
+     * @param grantType Grant type (required)
+     * @param clientId Client ID (id of application/service registered as client in IDP) (required)
+     * @param username ConfigServer person username (required)
+     * @param password ConfigServer person password (required)
+     * @param authorization Basic authorization. Should contains client_id and secret Example: &#39;Authorization: Basic Y3...MQ&#x3D;&#x3D;&#39; (optional)
      * @return ApiResponse&lt;DefaultOAuth2AccessToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DefaultOAuth2AccessToken> retrieveTokenWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = retrieveTokenValidateBeforeCall(null, null);
+    public ApiResponse<DefaultOAuth2AccessToken> retrieveTokenWithHttpInfo(String grantType, String clientId, String username, String password, String authorization) throws ApiException {
+        com.squareup.okhttp.Call call = retrieveTokenValidateBeforeCall(grantType, clientId, username, password, authorization, null, null);
         Type localVarReturnType = new TypeToken<DefaultOAuth2AccessToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1002,11 +1042,16 @@ public class AuthenticationApi {
     /**
      * Endpoint to retrieve token (asynchronously)
      * Can be called directly for Client Credential and Resource Owner Code flow.  Resource Owner example:   &#x60;curl client_name:client_secret@localhost:8095/oauth/token -d grant_type&#x3D;password -d client_id&#x3D;external_api_client-d scope&#x3D;openid -d username&#x3D;domain\\\\user -d password&#x3D;password&#x60;   Client credentials example:   &#x60;curl client_name:client_secret@localhost:8095/oauth/token -d grant_type&#x3D;client_credentials -d scope&#x3D;openid&#x60;
+     * @param grantType Grant type (required)
+     * @param clientId Client ID (id of application/service registered as client in IDP) (required)
+     * @param username ConfigServer person username (required)
+     * @param password ConfigServer person password (required)
+     * @param authorization Basic authorization. Should contains client_id and secret Example: &#39;Authorization: Basic Y3...MQ&#x3D;&#x3D;&#39; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call retrieveTokenAsync(final ApiCallback<DefaultOAuth2AccessToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call retrieveTokenAsync(String grantType, String clientId, String username, String password, String authorization, final ApiCallback<DefaultOAuth2AccessToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1027,7 +1072,7 @@ public class AuthenticationApi {
             };
         }
 
-        com.squareup.okhttp.Call call = retrieveTokenValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = retrieveTokenValidateBeforeCall(grantType, clientId, username, password, authorization, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DefaultOAuth2AccessToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
