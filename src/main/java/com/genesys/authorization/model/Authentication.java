@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * Authentication
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T13:22:58.896Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T16:23:00.042Z")
 public class Authentication {
 
   @Override
