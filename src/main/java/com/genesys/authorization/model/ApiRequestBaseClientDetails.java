@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ApiRequestBaseClientDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T22:28:38.081Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T22:54:36.365Z")
 public class ApiRequestBaseClientDetails {
   @SerializedName("data")
   private BaseClientDetails data = null;

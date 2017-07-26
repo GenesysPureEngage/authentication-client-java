@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * BaseClientDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T22:28:38.081Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T22:54:36.365Z")
 public class BaseClientDetails {
   @SerializedName("access_token_validity")
   private Integer accessTokenValidity = null;
