@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
  * This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)
  */
 @ApiModel(description = "This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T23:32:33.563Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-27T07:23:01.098Z")
 public class CloudUserDetails {
   @SerializedName("authorities")
   private CollectionUserRole authorities = null;

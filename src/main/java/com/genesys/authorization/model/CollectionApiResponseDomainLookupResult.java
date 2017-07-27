@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * CollectionApiResponseDomainLookupResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-26T23:32:33.563Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-27T07:23:01.098Z")
 public class CollectionApiResponseDomainLookupResult {
 
   @Override
