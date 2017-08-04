@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * CollectionUserRole
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T18:39:46.063Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-04T16:22:59.478Z")
 public class CollectionUserRole {
 
   @Override
