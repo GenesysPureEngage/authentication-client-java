@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * DomainLookupResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-04T16:22:59.478Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-04T22:54:33.891Z")
 public class DomainLookupResult {
   @SerializedName("authScheme")
   private String authScheme = null;
