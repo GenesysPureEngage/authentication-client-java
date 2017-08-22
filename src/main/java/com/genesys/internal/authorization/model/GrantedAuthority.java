@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GrantedAuthority
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-21T21:32:57.267Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-22T16:18:30.712Z")
 public class GrantedAuthority {
   @SerializedName("authority")
   private String authority = null;
