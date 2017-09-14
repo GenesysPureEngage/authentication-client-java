@@ -12,7 +12,12 @@ buildscript {
     repositories {
         jcenter()
     }
+	dependencies {
+        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.5.3"
+    }
 }
+
+apply plugin: 'io.codearte.nexus-staging'
 
 repositories {
     jcenter()
@@ -94,4 +99,9 @@ uploadArchives {
       }
     }
   }
+}
+
+nexusStaging {  
+    username = ossrhUsername
+    password = ossrhPassword
 }
