@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * UserRole
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-01T15:04:18.782Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-01T20:25:42.402Z")
 public class UserRole {
   @SerializedName("name")
   private String name = null;
@@ -88,6 +88,6 @@ public class UserRole {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

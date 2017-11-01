@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ModelApiResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-01T15:04:18.782Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-01T20:25:42.402Z")
 public class ModelApiResponse {
   @SerializedName("data")
   private Object data = null;
@@ -159,6 +159,6 @@ public class ModelApiResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 
