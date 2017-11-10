@@ -28,7 +28,7 @@ import java.io.IOException;
  * This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)
  */
 @ApiModel(description = "This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-10T20:33:24.754Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-10T21:20:03.288Z")
 public class CloudUserDetails {
   @SerializedName("authorities")
   private UserRole authorities = null;
