@@ -73,7 +73,7 @@ public class AuthenticationApi {
      */
     public com.squareup.okhttp.Call authorizeCall(String responseType, String redirectUri, String clientId, String authorization, String scope, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/oauth/authorize";
 
@@ -121,7 +121,7 @@ public class AuthenticationApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call authorizeValidateBeforeCall(String responseType, String redirectUri, String clientId, String authorization, String scope, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
@@ -140,14 +140,10 @@ public class AuthenticationApi {
             throw new ApiException("Missing the required parameter 'clientId' when calling authorize(Async)");
         }
         
-        
+
         com.squareup.okhttp.Call call = authorizeCall(responseType, redirectUri, clientId, authorization, scope, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -227,7 +223,7 @@ public class AuthenticationApi {
      */
     public com.squareup.okhttp.Call changePasswordCall(ChangePasswordOperation request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
-        
+
         // create path and map variables
         String localVarPath = "/change-password";
 
@@ -265,7 +261,7 @@ public class AuthenticationApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call changePasswordValidateBeforeCall(ChangePasswordOperation request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
@@ -274,14 +270,10 @@ public class AuthenticationApi {
             throw new ApiException("Missing the required parameter 'request' when calling changePassword(Async)");
         }
         
-        
+
         com.squareup.okhttp.Call call = changePasswordCall(request, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -353,7 +345,7 @@ public class AuthenticationApi {
      */
     public com.squareup.okhttp.Call getInfoCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/userinfo";
 
@@ -393,7 +385,7 @@ public class AuthenticationApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getInfoValidateBeforeCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
@@ -402,14 +394,10 @@ public class AuthenticationApi {
             throw new ApiException("Missing the required parameter 'authorization' when calling getInfo(Async)");
         }
         
-        
+
         com.squareup.okhttp.Call call = getInfoCall(authorization, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -488,7 +476,7 @@ public class AuthenticationApi {
      */
     public com.squareup.okhttp.Call retrieveTokenCall(String grantType, String authorization, String accept, String scope, String clientId, String refreshToken, String username, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/oauth/token";
 
@@ -542,7 +530,7 @@ public class AuthenticationApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call retrieveTokenValidateBeforeCall(String grantType, String authorization, String accept, String scope, String clientId, String refreshToken, String username, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
@@ -551,14 +539,10 @@ public class AuthenticationApi {
             throw new ApiException("Missing the required parameter 'grantType' when calling retrieveToken(Async)");
         }
         
-        
+
         com.squareup.okhttp.Call call = retrieveTokenCall(grantType, authorization, accept, scope, clientId, refreshToken, username, password, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -653,7 +637,7 @@ public class AuthenticationApi {
      */
     public com.squareup.okhttp.Call signInCall(String username, String password, Boolean saml, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/sign-in";
 
@@ -697,7 +681,7 @@ public class AuthenticationApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call signInValidateBeforeCall(String username, String password, Boolean saml, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
@@ -706,14 +690,10 @@ public class AuthenticationApi {
             throw new ApiException("Missing the required parameter 'username' when calling signIn(Async)");
         }
         
-        
+
         com.squareup.okhttp.Call call = signInCall(username, password, saml, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -788,7 +768,7 @@ public class AuthenticationApi {
      */
     public com.squareup.okhttp.Call signOutCall(String authorization, Boolean global, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/sign-out";
 
@@ -830,7 +810,7 @@ public class AuthenticationApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call signOutValidateBeforeCall(String authorization, Boolean global, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
@@ -839,14 +819,10 @@ public class AuthenticationApi {
             throw new ApiException("Missing the required parameter 'authorization' when calling signOut(Async)");
         }
         
-        
+
         com.squareup.okhttp.Call call = signOutCall(authorization, global, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -921,7 +897,7 @@ public class AuthenticationApi {
      */
     public com.squareup.okhttp.Call tenantInfoCall(AuthSchemeLookupData lookupData, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = lookupData;
-        
+
         // create path and map variables
         String localVarPath = "/auth-scheme";
 
@@ -959,18 +935,14 @@ public class AuthenticationApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call tenantInfoValidateBeforeCall(AuthSchemeLookupData lookupData, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        
+
         com.squareup.okhttp.Call call = tenantInfoCall(lookupData, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
