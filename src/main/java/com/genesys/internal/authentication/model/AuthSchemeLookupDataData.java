@@ -24,71 +24,50 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ApiResponseStatus
+ * AuthSchemeLookupDataData
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T20:47:08.913Z")
-public class ApiResponseStatus {
-  @SerializedName("code")
-  private Integer code = null;
+public class AuthSchemeLookupDataData {
+  @SerializedName("tenant")
+  private String tenant = null;
 
-  @SerializedName("detail")
-  private Object detail = null;
+  @SerializedName("userName")
+  private String userName = null;
 
-  @SerializedName("message")
-  private String message = null;
-
-  public ApiResponseStatus code(Integer code) {
-    this.code = code;
+  public AuthSchemeLookupDataData tenant(String tenant) {
+    this.tenant = tenant;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Get tenant
+   * @return tenant
   **/
   @ApiModelProperty(value = "")
-  public Integer getCode() {
-    return code;
+  public String getTenant() {
+    return tenant;
   }
 
-  public void setCode(Integer code) {
-    this.code = code;
+  public void setTenant(String tenant) {
+    this.tenant = tenant;
   }
 
-  public ApiResponseStatus detail(Object detail) {
-    this.detail = detail;
+  public AuthSchemeLookupDataData userName(String userName) {
+    this.userName = userName;
     return this;
   }
 
    /**
-   * Get detail
-   * @return detail
+   * Get userName
+   * @return userName
   **/
   @ApiModelProperty(value = "")
-  public Object getDetail() {
-    return detail;
+  public String getUserName() {
+    return userName;
   }
 
-  public void setDetail(Object detail) {
-    this.detail = detail;
-  }
-
-  public ApiResponseStatus message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Get message
-   * @return message
-  **/
-  @ApiModelProperty(value = "")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
+  public void setUserName(String userName) {
+    this.userName = userName;
   }
 
 
@@ -100,26 +79,24 @@ public class ApiResponseStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiResponseStatus apiResponseStatus = (ApiResponseStatus) o;
-    return Objects.equals(this.code, apiResponseStatus.code) &&
-        Objects.equals(this.detail, apiResponseStatus.detail) &&
-        Objects.equals(this.message, apiResponseStatus.message);
+    AuthSchemeLookupDataData authSchemeLookupDataData = (AuthSchemeLookupDataData) o;
+    return Objects.equals(this.tenant, authSchemeLookupDataData.tenant) &&
+        Objects.equals(this.userName, authSchemeLookupDataData.userName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, detail, message);
+    return Objects.hash(tenant, userName);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiResponseStatus {\n");
+    sb.append("class AuthSchemeLookupDataData {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
