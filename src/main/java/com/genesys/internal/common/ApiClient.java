@@ -52,7 +52,7 @@ import com.genesys.internal.common.auth.OAuth;
 
 public class ApiClient {
 
-    private String basePath = "https://gws-usw1-int.genhtcc.com/auth/v3";
+    private String basePath = "https://your-server.com/auth/v3";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -105,7 +105,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://gws-usw1-int.genhtcc.com/auth/v3
+     * @param basePath Base path of the URL (e.g https://your-server.com/auth/v3
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
