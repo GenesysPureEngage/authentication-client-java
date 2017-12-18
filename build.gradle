@@ -98,14 +98,14 @@ uploadArchives {
       }
 
       pom.project {
-        name 'Authorization API'	  
-        description 'A Java library to interface to Genesys Authorization public API'
-        url 'https://developer.genhtcc.com/api/authorization/index.html'
+        name 'Authentication API'	  
+        description 'A Java library to interface to Genesys Authentication public API'
+        url 'https://developer.genhtcc.com/client-libraries/authentication/'
 
         scm {
-          connection 'scm:git:git@github.com:GenesysPureEngage/authorization-client-java.git'
-          developerConnection 'scm:git:git@github.com:GenesysPureEngage/authorization-client-java.git'
-          url 'https://github.com/GenesysPureEngage/authorization-client-java'
+          connection 'scm:git:git@github.com:GenesysPureEngage/authentication-client-java.git'
+          developerConnection 'scm:git:git@github.com:GenesysPureEngage/authentication-client-java.git'
+          url 'https://github.com/GenesysPureEngage/authentication-client-java'
         }
 
         licenses {
