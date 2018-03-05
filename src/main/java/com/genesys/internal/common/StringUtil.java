@@ -13,7 +13,7 @@
 
 package com.genesys.internal.common;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:28:53.539Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:49:03.887Z")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).
