@@ -24,29 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * UserRole
+ * JwtConvertResult
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-19T20:34:25.753Z")
-public class UserRole {
-  @SerializedName("name")
-  private String name = null;
+public class JwtConvertResult {
+  @SerializedName("jwtToken")
+  private String jwtToken = null;
 
-  public UserRole name(String name) {
-    this.name = name;
+  public JwtConvertResult jwtToken(String jwtToken) {
+    this.jwtToken = jwtToken;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get jwtToken
+   * @return jwtToken
   **/
   @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
+  public String getJwtToken() {
+    return jwtToken;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setJwtToken(String jwtToken) {
+    this.jwtToken = jwtToken;
   }
 
 
@@ -58,22 +58,22 @@ public class UserRole {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserRole userRole = (UserRole) o;
-    return Objects.equals(this.name, userRole.name);
+    JwtConvertResult jwtConvertResult = (JwtConvertResult) o;
+    return Objects.equals(this.jwtToken, jwtConvertResult.jwtToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(jwtToken);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserRole {\n");
+    sb.append("class JwtConvertResult {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    jwtToken: ").append(toIndentedString(jwtToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }
