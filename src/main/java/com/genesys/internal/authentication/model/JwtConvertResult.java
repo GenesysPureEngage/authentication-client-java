@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * JwtConvertResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-07T15:49:16.351Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-07T17:31:57.404Z")
 public class JwtConvertResult {
   @SerializedName("jwtToken")
   private String jwtToken = null;
