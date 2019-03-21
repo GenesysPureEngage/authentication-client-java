@@ -598,12 +598,13 @@ public class AuthenticationApi {
     }
     /**
      * Build call for getJwtInfoUsingGET
+     * @param authorization The OAuth 2 bearer access token you received from [/auth/v3/oauth/token](/reference/authentication/Authentication/index.html#retrieveToken). For example: \&quot;Authorization: bearer a4b5da75-a584-4053-9227-0f0ab23ff06e\&quot;  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getJwtInfoUsingGETCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getJwtInfoUsingGETCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -613,6 +614,8 @@ public class AuthenticationApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -645,10 +648,15 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getJwtInfoUsingGETValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getJwtInfoUsingGETValidateBeforeCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'authorization' is set
+        if (authorization == null) {
+            throw new ApiException("Missing the required parameter 'authorization' when calling getJwtInfoUsingGET(Async)");
+        }
         
 
-        com.squareup.okhttp.Call call = getJwtInfoUsingGETCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getJwtInfoUsingGETCall(authorization, progressListener, progressRequestListener);
         return call;
 
     }
@@ -656,22 +664,24 @@ public class AuthenticationApi {
     /**
      * getJwtInfo
      * 
+     * @param authorization The OAuth 2 bearer access token you received from [/auth/v3/oauth/token](/reference/authentication/Authentication/index.html#retrieveToken). For example: \&quot;Authorization: bearer a4b5da75-a584-4053-9227-0f0ab23ff06e\&quot;  (required)
      * @return ModelApiResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelApiResponse getJwtInfoUsingGET() throws ApiException {
-        ApiResponse<ModelApiResponse> resp = getJwtInfoUsingGETWithHttpInfo();
+    public ModelApiResponse getJwtInfoUsingGET(String authorization) throws ApiException {
+        ApiResponse<ModelApiResponse> resp = getJwtInfoUsingGETWithHttpInfo(authorization);
         return resp.getData();
     }
 
     /**
      * getJwtInfo
      * 
+     * @param authorization The OAuth 2 bearer access token you received from [/auth/v3/oauth/token](/reference/authentication/Authentication/index.html#retrieveToken). For example: \&quot;Authorization: bearer a4b5da75-a584-4053-9227-0f0ab23ff06e\&quot;  (required)
      * @return ApiResponse&lt;ModelApiResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelApiResponse> getJwtInfoUsingGETWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getJwtInfoUsingGETValidateBeforeCall(null, null);
+    public ApiResponse<ModelApiResponse> getJwtInfoUsingGETWithHttpInfo(String authorization) throws ApiException {
+        com.squareup.okhttp.Call call = getJwtInfoUsingGETValidateBeforeCall(authorization, null, null);
         Type localVarReturnType = new TypeToken<ModelApiResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -679,11 +689,12 @@ public class AuthenticationApi {
     /**
      * getJwtInfo (asynchronously)
      * 
+     * @param authorization The OAuth 2 bearer access token you received from [/auth/v3/oauth/token](/reference/authentication/Authentication/index.html#retrieveToken). For example: \&quot;Authorization: bearer a4b5da75-a584-4053-9227-0f0ab23ff06e\&quot;  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getJwtInfoUsingGETAsync(final ApiCallback<ModelApiResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getJwtInfoUsingGETAsync(String authorization, final ApiCallback<ModelApiResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -704,7 +715,7 @@ public class AuthenticationApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getJwtInfoUsingGETValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getJwtInfoUsingGETValidateBeforeCall(authorization, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ModelApiResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

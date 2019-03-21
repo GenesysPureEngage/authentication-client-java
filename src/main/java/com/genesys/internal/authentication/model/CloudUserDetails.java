@@ -28,7 +28,7 @@ import java.io.IOException;
  * This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)
  */
 @ApiModel(description = "This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-19T11:01:19.221Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-20T21:08:04.407Z")
 public class CloudUserDetails {
   @SerializedName("authorities")
   private UserRole authorities = null;
@@ -50,6 +50,9 @@ public class CloudUserDetails {
 
   @SerializedName("username")
   private String username = null;
+
+  @SerializedName("properties")
+  private Object properties = null;
 
   public CloudUserDetails authorities(UserRole authorities) {
     this.authorities = authorities;
@@ -177,6 +180,24 @@ public class CloudUserDetails {
     this.username = username;
   }
 
+  public CloudUserDetails properties(Object properties) {
+    this.properties = properties;
+    return this;
+  }
+
+   /**
+   * The user&#39;s properties in Configuration Server.
+   * @return properties
+  **/
+  @ApiModelProperty(value = "The user's properties in Configuration Server.")
+  public Object getProperties() {
+    return properties;
+  }
+
+  public void setProperties(Object properties) {
+    this.properties = properties;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,12 +214,13 @@ public class CloudUserDetails {
         Objects.equals(this.dbid, cloudUserDetails.dbid) &&
         Objects.equals(this.environmentId, cloudUserDetails.environmentId) &&
         Objects.equals(this.loginName, cloudUserDetails.loginName) &&
-        Objects.equals(this.username, cloudUserDetails.username);
+        Objects.equals(this.username, cloudUserDetails.username) &&
+        Objects.equals(this.properties, cloudUserDetails.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorities, cmeUserName, contactCenterId, dbid, environmentId, loginName, username);
+    return Objects.hash(authorities, cmeUserName, contactCenterId, dbid, environmentId, loginName, username, properties);
   }
 
 
@@ -214,6 +236,7 @@ public class CloudUserDetails {
     sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
     sb.append("    loginName: ").append(toIndentedString(loginName)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

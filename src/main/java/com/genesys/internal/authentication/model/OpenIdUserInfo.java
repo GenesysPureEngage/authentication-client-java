@@ -28,7 +28,7 @@ import java.io.IOException;
  * This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)
  */
 @ApiModel(description = "This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-19T11:01:19.221Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-20T21:08:04.407Z")
 public class OpenIdUserInfo {
   @SerializedName("aud")
   private String aud = null;
@@ -59,6 +59,9 @@ public class OpenIdUserInfo {
 
   @SerializedName("user_name")
   private String userName = null;
+
+  @SerializedName("properties")
+  private Object properties = null;
 
   public OpenIdUserInfo aud(String aud) {
     this.aud = aud;
@@ -240,6 +243,24 @@ public class OpenIdUserInfo {
     this.userName = userName;
   }
 
+  public OpenIdUserInfo properties(Object properties) {
+    this.properties = properties;
+    return this;
+  }
+
+   /**
+   * The user&#39;s properties in Configuration Server.
+   * @return properties
+  **/
+  @ApiModelProperty(value = "The user's properties in Configuration Server.")
+  public Object getProperties() {
+    return properties;
+  }
+
+  public void setProperties(Object properties) {
+    this.properties = properties;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -259,12 +280,13 @@ public class OpenIdUserInfo {
         Objects.equals(this.familyName, openIdUserInfo.familyName) &&
         Objects.equals(this.givenName, openIdUserInfo.givenName) &&
         Objects.equals(this.sub, openIdUserInfo.sub) &&
-        Objects.equals(this.userName, openIdUserInfo.userName);
+        Objects.equals(this.userName, openIdUserInfo.userName) &&
+        Objects.equals(this.properties, openIdUserInfo.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aud, authorities, contactCenterId, dbid, email, environmentId, familyName, givenName, sub, userName);
+    return Objects.hash(aud, authorities, contactCenterId, dbid, email, environmentId, familyName, givenName, sub, userName, properties);
   }
 
 
@@ -283,6 +305,7 @@ public class OpenIdUserInfo {
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    sub: ").append(toIndentedString(sub)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -118,12 +118,13 @@ public class AuthenticationApi {
     /**
      * getJwtInfo
      *
+     * @param authorization The OAuth 2 bearer access token you received from [/auth/v3/oauth/token](/reference/authentication/Authentication/index.html#retrieveToken). For example: \&quot;Authorization: bearer a4b5da75-a584-4053-9227-0f0ab23ff06e\&quot;  (required)
      * @return ModelApiResponse
      * @throws AuthenticationApiException if the call is unsuccessful.
      */
-    public ModelApiResponse getJwtUserInfo() throws AuthenticationApiException {
+    public ModelApiResponse getJwtUserInfo(String authorization) throws AuthenticationApiException {
         try {
-            return authenticationApi.getJwtInfoUsingGET();
+            return authenticationApi.getJwtInfoUsingGET(authorization);
         } catch (ApiException e) {
             throw new AuthenticationApiException("Error getting jwt userinfo", e);
         }
@@ -185,7 +186,7 @@ public class AuthenticationApi {
      *
      * @param username The agent&#39;s username, formatted as &#39;tenant\\username&#39;. (required)
      * @param password The agent&#39;s password. (required)
-     * @param isSaml Specifies whether to login using [Security Assertion Markup Language](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) (SAML). (optional)
+     * @param isSaml   Specifies whether to login using [Security Assertion Markup Language](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) (SAML). (optional)
      * @return a map of form parameters
      * @throws IllegalArgumentException if required form parameter is missed
      */
