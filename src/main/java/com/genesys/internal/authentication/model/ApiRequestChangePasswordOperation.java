@@ -14,6 +14,7 @@
 package com.genesys.internal.authentication.model;
 
 import java.util.Objects;
+import com.genesys.internal.authentication.model.ChangePasswordOperation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,71 +25,50 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ResponseStatus
+ * ApiRequestChangePasswordOperation
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-29T01:58:21.834Z")
-public class ResponseStatus {
-  @SerializedName("code")
-  private Integer code = null;
+public class ApiRequestChangePasswordOperation {
+  @SerializedName("data")
+  private ChangePasswordOperation data = null;
 
-  @SerializedName("detail")
-  private Object detail = null;
+  @SerializedName("operationId")
+  private String operationId = null;
 
-  @SerializedName("message")
-  private String message = null;
-
-  public ResponseStatus code(Integer code) {
-    this.code = code;
+  public ApiRequestChangePasswordOperation data(ChangePasswordOperation data) {
+    this.data = data;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Get data
+   * @return data
   **/
   @ApiModelProperty(value = "")
-  public Integer getCode() {
-    return code;
+  public ChangePasswordOperation getData() {
+    return data;
   }
 
-  public void setCode(Integer code) {
-    this.code = code;
+  public void setData(ChangePasswordOperation data) {
+    this.data = data;
   }
 
-  public ResponseStatus detail(Object detail) {
-    this.detail = detail;
+  public ApiRequestChangePasswordOperation operationId(String operationId) {
+    this.operationId = operationId;
     return this;
   }
 
    /**
-   * Get detail
-   * @return detail
+   * Used for asynchronous operations to map request and response
+   * @return operationId
   **/
-  @ApiModelProperty(value = "")
-  public Object getDetail() {
-    return detail;
+  @ApiModelProperty(value = "Used for asynchronous operations to map request and response")
+  public String getOperationId() {
+    return operationId;
   }
 
-  public void setDetail(Object detail) {
-    this.detail = detail;
-  }
-
-  public ResponseStatus message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Get message
-   * @return message
-  **/
-  @ApiModelProperty(value = "")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
+  public void setOperationId(String operationId) {
+    this.operationId = operationId;
   }
 
 
@@ -100,26 +80,24 @@ public class ResponseStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseStatus responseStatus = (ResponseStatus) o;
-    return Objects.equals(this.code, responseStatus.code) &&
-        Objects.equals(this.detail, responseStatus.detail) &&
-        Objects.equals(this.message, responseStatus.message);
+    ApiRequestChangePasswordOperation apiRequestChangePasswordOperation = (ApiRequestChangePasswordOperation) o;
+    return Objects.equals(this.data, apiRequestChangePasswordOperation.data) &&
+        Objects.equals(this.operationId, apiRequestChangePasswordOperation.operationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, detail, message);
+    return Objects.hash(data, operationId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseStatus {\n");
+    sb.append("class ApiRequestChangePasswordOperation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -62,7 +62,9 @@ public class AuthenticationApi {
      */
     public ModelApiResponse changePassword(ChangePasswordOperation request, String authorization) throws AuthenticationApiException {
         try {
-            return authenticationApi.changePassword(request, authorization);
+            ApiRequestChangePasswordOperation req = new ApiRequestChangePasswordOperation();
+            req.data(request);
+            return authenticationApi.changePassword(req, authorization);
         } catch (ApiException e) {
             throw new AuthenticationApiException("Error changing password", e);
         }
@@ -175,7 +177,9 @@ public class AuthenticationApi {
      */
     public ModelApiResponse retrieveAuthScheme(AuthSchemeLookupData lookupData) throws AuthenticationApiException {
         try {
-            return authenticationApi.tenantInfo(lookupData);
+            ApiRequestAuthSchemeLookupData req = new ApiRequestAuthSchemeLookupData();
+            req.data(lookupData);
+            return authenticationApi.tenantInfo(req);
         } catch (ApiException e) {
             throw new AuthenticationApiException("Error retrieve auth scheme", e);
         }
