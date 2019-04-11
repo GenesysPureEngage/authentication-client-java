@@ -23,18 +23,20 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)
  */
 @ApiModel(description = "This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-29T01:58:21.834Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-11T15:09:45.652Z")
 public class OpenIdUserInfo {
   @SerializedName("aud")
   private String aud = null;
 
   @SerializedName("authorities")
-  private UserRole authorities = null;
+  private List<UserRole> authorities = new ArrayList<UserRole>();
 
   @SerializedName("contact_center_id")
   private String contactCenterId = null;
@@ -81,8 +83,13 @@ public class OpenIdUserInfo {
     this.aud = aud;
   }
 
-  public OpenIdUserInfo authorities(UserRole authorities) {
+  public OpenIdUserInfo authorities(List<UserRole> authorities) {
     this.authorities = authorities;
+    return this;
+  }
+
+  public OpenIdUserInfo addAuthoritiesItem(UserRole authoritiesItem) {
+    this.authorities.add(authoritiesItem);
     return this;
   }
 
@@ -91,11 +98,11 @@ public class OpenIdUserInfo {
    * @return authorities
   **/
   @ApiModelProperty(required = true, value = "Authorities assigned to the user.")
-  public UserRole getAuthorities() {
+  public List<UserRole> getAuthorities() {
     return authorities;
   }
 
-  public void setAuthorities(UserRole authorities) {
+  public void setAuthorities(List<UserRole> authorities) {
     this.authorities = authorities;
   }
 
