@@ -69,7 +69,7 @@ public class AuthenticationApi {
      */
     public ModelApiResponse changePassword(ChangePasswordOperation request, String authorization) throws AuthenticationApiException {
         try {
-            ApiRequestChangePasswordOperation req = new ApiRequestChangePasswordOperation();
+            ApiRequestOfChangePasswordOperation req = new ApiRequestOfChangePasswordOperation();
             req.data(request);
             return authenticationApi.changePassword(req, authorization);
         } catch (ApiException e) {
@@ -174,23 +174,6 @@ public class AuthenticationApi {
         }
     }
 
-    /**
-     * Get authentication scheme.
-     * Get the authentication scheme by user name or tenant name. The return value is   &#39;saml&#39; if the contact center has [Security Assertion Markup Language](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language)   (SAML) enabled; otherwise, the return value is &#39;basic&#39;.
-     *
-     * @param lookupData Data for scheme lookup. (optional)
-     * @return ModelApiResponse
-     * @throws AuthenticationApiException if the call is unsuccessful.
-     */
-    public ModelApiResponse retrieveAuthScheme(AuthSchemeLookupData lookupData) throws AuthenticationApiException {
-        try {
-            ApiRequestAuthSchemeLookupData req = new ApiRequestAuthSchemeLookupData();
-            req.data(lookupData);
-            return authenticationApi.tenantInfo(req);
-        } catch (ApiException e) {
-            throw new AuthenticationApiException("Error retrieve auth scheme", e);
-        }
-    }
 
     /**
      * Build  form parameters to sign in

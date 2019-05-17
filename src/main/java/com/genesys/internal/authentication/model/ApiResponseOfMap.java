@@ -29,10 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ModelApiResponse
+ * ApiResponseOfMap
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-17T03:21:49.960Z")
-public class ModelApiResponse {
+public class ApiResponseOfMap {
   @SerializedName("data")
   private Object data = null;
 
@@ -45,7 +45,7 @@ public class ModelApiResponse {
   @SerializedName("status")
   private ResponseStatus status = null;
 
-  public ModelApiResponse data(Object data) {
+  public ApiResponseOfMap data(Object data) {
     this.data = data;
     return this;
   }
@@ -63,12 +63,12 @@ public class ModelApiResponse {
     this.data = data;
   }
 
-  public ModelApiResponse errors(List<ErrorResponse> errors) {
+  public ApiResponseOfMap errors(List<ErrorResponse> errors) {
     this.errors = errors;
     return this;
   }
 
-  public ModelApiResponse addErrorsItem(ErrorResponse errorsItem) {
+  public ApiResponseOfMap addErrorsItem(ErrorResponse errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<ErrorResponse>();
     }
@@ -89,7 +89,7 @@ public class ModelApiResponse {
     this.errors = errors;
   }
 
-  public ModelApiResponse path(String path) {
+  public ApiResponseOfMap path(String path) {
     this.path = path;
     return this;
   }
@@ -107,7 +107,7 @@ public class ModelApiResponse {
     this.path = path;
   }
 
-  public ModelApiResponse status(ResponseStatus status) {
+  public ApiResponseOfMap status(ResponseStatus status) {
     this.status = status;
     return this;
   }
@@ -134,11 +134,11 @@ public class ModelApiResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelApiResponse _apiResponse = (ModelApiResponse) o;
-    return Objects.equals(this.data, _apiResponse.data) &&
-        Objects.equals(this.errors, _apiResponse.errors) &&
-        Objects.equals(this.path, _apiResponse.path) &&
-        Objects.equals(this.status, _apiResponse.status);
+    ApiResponseOfMap apiResponseOfMap = (ApiResponseOfMap) o;
+    return Objects.equals(this.data, apiResponseOfMap.data) &&
+        Objects.equals(this.errors, apiResponseOfMap.errors) &&
+        Objects.equals(this.path, apiResponseOfMap.path) &&
+        Objects.equals(this.status, apiResponseOfMap.status);
   }
 
   @Override
@@ -150,7 +150,7 @@ public class ModelApiResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelApiResponse {\n");
+    sb.append("class ApiResponseOfMap {\n");
     
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
