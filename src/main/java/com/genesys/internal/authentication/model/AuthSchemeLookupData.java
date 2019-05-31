@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AuthSchemeLookupData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-29T16:58:18.897Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-30T18:17:29.401Z")
 public class AuthSchemeLookupData {
   @SerializedName("userName")
   private String userName = null;
