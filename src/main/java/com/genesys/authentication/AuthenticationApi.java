@@ -25,13 +25,13 @@ public class AuthenticationApi {
     /**
      * Create a AuthenticationApi object with your given authentication base URI and API key.
      *
-     * @param baseUri authentication base URI.
-     * @param apiKey  your API key.
+     * @param apiKey The API key to be included in HTTP requests.
+     * @param baseUrl The base URL of the PureEngage Cloud API.
      */
-    public AuthenticationApi(String baseUri, String apiKey) {
+    public AuthenticationApi(String apiKey, String baseUrl) {
         client = new ApiClient();
-        client.setBasePath(baseUri);
-        client.setApiKey(apiKey);
+        client.setBasePath(baseUrl);
+        client.addDefaultHeader("x-api-key", apiKey);
         retrieveTokenApi = new RetrieveTokenApi(client);
         authorizationApi = new AuthorizationApi(client);
         authenticationApi = new com.genesys.internal.authentication.api.AuthenticationApi(client);

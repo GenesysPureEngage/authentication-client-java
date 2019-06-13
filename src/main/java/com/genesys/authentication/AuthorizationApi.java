@@ -1,7 +1,9 @@
 package com.genesys.authentication;
 
-import com.genesys.internal.common.*;
-import com.squareup.okhttp.*;
+import com.genesys.internal.common.ApiClient;
+import com.squareup.okhttp.Headers;
+import com.squareup.okhttp.HttpUrl;
+import com.squareup.okhttp.Request;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -55,6 +57,8 @@ public class AuthorizationApi {
      * @throws AuthenticationApiException if the call is unsuccessful.
      */
     public void authorize(Map<String, String> queryParams, String authorization) throws AuthenticationApiException {
+        Map<String, String> headers = new HashMap<String, String>();
+
         HttpUrl.Builder httpBuilder = HttpUrl.parse(this.client.getBasePath() + "/oauth/authorize").newBuilder();
         if (queryParams != null) {
             for (Map.Entry<String, String> param : queryParams.entrySet()) {
@@ -65,11 +69,15 @@ public class AuthorizationApi {
         if (authorization != null) {
             headerBuilder.add("Authorization", authorization);
         }
-        Request request = new Request.Builder()
+
+        Request.Builder reqBuilder = new Request.Builder()
                 .url(httpBuilder.build())
                 .headers(headerBuilder.build())
-                .get()
-                .build();
+                .get();
+        client.processHeaderParams(headers, reqBuilder);
+
+        Request request = reqBuilder.build();
+
         try {
             this.client.getHttpClient().newCall(request).execute();
         } catch (IOException e) {

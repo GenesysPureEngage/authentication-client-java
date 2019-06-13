@@ -1,9 +1,13 @@
 package com.genesys.authentication;
 
 import com.genesys.internal.authentication.model.DefaultOAuth2AccessToken;
-import com.genesys.internal.common.*;
+import com.genesys.internal.common.ApiClient;
+import com.genesys.internal.common.ApiException;
+import com.genesys.internal.common.ApiResponse;
 import com.google.gson.reflect.TypeToken;
-import com.squareup.okhttp.*;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Headers;
+import com.squareup.okhttp.Request;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -123,17 +127,22 @@ public class RetrieveTokenApi {
      * @throws AuthenticationApiException if the call is unsuccessful.
      */
     public DefaultOAuth2AccessToken retrieveToken(Map<String, Object> formParams, String authorization) throws AuthenticationApiException {
+        Map<String, String> headers = new HashMap<String, String>();
+
         Headers.Builder headerBuilder = new Headers.Builder();
         headerBuilder.add("Accept", "*/*");
         headerBuilder.add("Content-Type", "application/x-www-form-urlencoded");
         if (authorization != null) {
             headerBuilder.add("Authorization", authorization);
         }
-        Request request = new Request.Builder()
+
+        Request.Builder reqBuilder = new Request.Builder()
                 .url(client.getBasePath() + "/oauth/token")
                 .headers(headerBuilder.build())
-                .post(client.buildRequestBodyFormEncoding(formParams))
-                .build();
+                .post(client.buildRequestBodyFormEncoding(formParams));
+        client.processHeaderParams(headers, reqBuilder);
+
+        Request request = reqBuilder.build();
         Call call = client.getHttpClient().newCall(request);
         Type returnType = new TypeToken<DefaultOAuth2AccessToken>() {
         }.getType();
