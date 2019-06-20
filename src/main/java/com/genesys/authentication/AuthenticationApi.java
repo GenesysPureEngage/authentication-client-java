@@ -1,31 +1,20 @@
 package com.genesys.authentication;
 
 import com.genesys.internal.authentication.model.*;
-import com.genesys.internal.common.*;
-import com.google.gson.reflect.TypeToken;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.Request;
-
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.Map;
+import com.genesys.internal.common.ApiClient;
+import com.genesys.internal.common.ApiException;
 
 public class AuthenticationApi {
 
-    private ApiClient client;
-
-    private com.genesys.internal.authentication.api.AuthenticationApi authenticationApi;
-
     private final RetrieveTokenApi retrieveTokenApi;
-
     private final AuthorizationApi authorizationApi;
+    private ApiClient client;
+    private com.genesys.internal.authentication.api.AuthenticationApi authenticationApi;
 
     /**
      * Create a AuthenticationApi object with your given authentication base URI and API key.
      *
-     * @param apiKey The API key to be included in HTTP requests.
+     * @param apiKey  The API key to be included in HTTP requests.
      * @param baseUrl The base URL of the PureEngage Cloud API.
      */
     public AuthenticationApi(String apiKey, String baseUrl) {
