@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ApiRequestOfChangePasswordOperation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-16T16:48:25.636Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T03:28:40.684Z")
 public class ApiRequestOfChangePasswordOperation {
   @SerializedName("data")
   private ChangePasswordOperation data = null;
