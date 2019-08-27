@@ -33,7 +33,7 @@ import java.util.Map;
  * This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)
  */
 @ApiModel(description = "This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-15T18:47:51.140Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-27T12:29:49.571Z")
 public class CloudUserDetails {
   @SerializedName("authorities")
   private List<UserRole> authorities = new ArrayList<UserRole>();
