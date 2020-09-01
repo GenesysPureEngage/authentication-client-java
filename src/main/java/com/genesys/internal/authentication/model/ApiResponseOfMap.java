@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * ApiResponseOfMap
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-23T11:08:41.797Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-31T08:40:02.074Z")
 public class ApiResponseOfMap {
   @SerializedName("data")
   private Object data = null;
