@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ApiRequestOfAuthSchemeLookupData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-17T16:42:13.576Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-02T18:39:49.834Z")
 public class ApiRequestOfAuthSchemeLookupData {
   @SerializedName("data")
   private AuthSchemeLookupData data = null;
