@@ -33,7 +33,7 @@ import java.util.Map;
  * This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)
  */
 @ApiModel(description = "This class describes the user in the system. Applicable to different entities (contact-center level user, application/service, cloud system admin)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-27T00:25:36.314Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-03T19:44:00.986Z")
 public class OpenIdUserInfo {
   @SerializedName("aud")
   private String aud = null;
